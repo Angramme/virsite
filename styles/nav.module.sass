@@ -1,0 +1,96 @@
+@import ./variables
+    
+.filler
+    min-width: 18.5rem
+    height: 70vh
+    margin: 3rem
+    @media ( max-aspect-ratio: 3/2 )
+        min-width: 4rem
+        margin: 0
+    @media ( max-aspect-ratio: 2/3 )
+        min-width: 2rem
+
+.container
+    // height: 100vh
+    // height: calc(var(--vh, 1vh) * 100)
+
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    padding: 3rem
+    z-index: 1
+
+    transition: left .2s, opacity .2s
+    @media ( max-aspect-ratio: 3/2 )
+        background: $primary
+        left: -20rem
+        opacity: 0
+
+.menu
+    margin-top: 3rem
+    margin-left: 1rem
+    margin-bottom: 3rem
+
+.open_menu_btn
+    @media ( min-aspect-ratio: 3/2 )
+        display: none
+    
+    position: fixed
+    left: 0
+    top: 0
+    bottom: 0
+
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    
+    z-index: 1
+
+    display: flex
+    align-items: center
+    & > div
+        cursor: pointer
+        margin: auto
+        padding-left: .5rem
+        transition: padding-left .2s
+    & > div:hover
+        padding-left: 1rem 
+    & > div > div
+        margin-bottom: 1rem
+        margin-top: 1rem
+        writing-mode: tb-rl
+        font-size: 2.4vh
+        font-size: calc(var(--vh, 1vh) * 2.4)
+
+.button, .current_button
+    margin-bottom: .8rem
+    font-family: 'Playfair Display', serif
+    & *
+        color: $on-primary
+        text-decoration: 0
+    & *:hover
+        color: $on-highlight
+        // text-decoration: underline
+        font-style: italic
+    @media ( max-aspect-ratio: 2/3  )
+        // font-size: 1.5rem
+
+.current_button
+    // text-decoration: underline solid 
+    & *
+        padding: .3em
+        background: $on-primary
+        color: $primary
+    & *:hover
+        font-style: unset
+
+.header
+    font-size: 4vh
+    font-size: calc(var(--vh, 1vh) * 4)
+    min-width: 30vh
+    min-width: calc(var(--vh, 1vh) * 30)
+
+.language
+    position: absolute
+    bottom: 4.1rem
+    left: 4.1rem

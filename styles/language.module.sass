@@ -1,0 +1,31 @@
+@import ./variables
+    
+.container
+    display: flex
+    flex-direction: column
+
+.flag_container
+    cursor: pointer
+
+    margin: .1rem
+    width: 2.7vh
+    width: calc(var(--vh, 1vh) * 2.7)
+    height: 2.4rvh
+    height: calc(var(--vh, 1vh) * 2.4)
+
+    white-space: nowrap
+    text-align: center
+    & img
+        vertical-align: middle
+        max-height: 25px
+        max-width: 160px
+        
+        // border: 1px solid $on-primary
+        filter: grayscale(80%)
+        transition: filter .2s
+    & img:hover
+        filter: grayscale(0%)
+    & .flag_helper
+        display: inline-block
+        height: 100%
+        vertical-align: middle

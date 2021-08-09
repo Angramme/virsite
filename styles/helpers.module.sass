@@ -1,0 +1,33 @@
+@import ./variables
+
+.container
+    text-align: justify
+    line-height: 3vh
+    line-height: calc(var(--vh, 1vh) * 3)
+
+    margin: 1rem
+    margin-top: 0
+    padding-top: 6rem
+    & > div
+        margin-top: 4rem
+
+.flex_container
+    display: flex
+    flex-flow: row nowrap
+    align-items: flex-start
+    & > div
+        margin-right: 4rem
+        position: relative
+    & > div:last-child
+        margin-right: 0
+    & > div.col25
+        // min-width: 25vw
+        // width: 25vw
+        min-width: 50vh
+        width: 50vh
+    @media ( max-aspect-ratio: 5/4 )
+        flex-wrap: wrap
+        justify-content: center
+        & > div
+            margin-right: 0
+            margin-bottom: 4rem

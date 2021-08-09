@@ -1,0 +1,36 @@
+@import ./variables
+    
+.container
+    margin-top: 10rem
+    font-size: .8rem
+    & > div
+        margin: 1em 0
+    // height: 20vh
+    @media (max-aspect-ratio: 3/2)
+        font-size: 1.8vh
+        font-size: calc(var(--vh, 1vh) * 1.8)
+        
+
+.flex
+    display: flex
+    flex-flow: row wrap
+    & > div
+        padding: 1em 2rem
+        color: $on-primary
+        border-right: 1px solid $on-fading
+        &:last-child
+            border-right: 0
+        &:first-child
+            padding-left: 0
+
+    & h3
+        margin-bottom: 1em
+    & div *
+        color: $on-primary
+
+
+.divider
+    margin: 0 auto
+    width: 100%
+    height: .5rem
+    border-top: 1px solid $on-fading

@@ -1,0 +1,134 @@
+@import ./variables
+
+.container, .image_container
+    list-style-type: none
+
+.container
+    padding: 0
+    margin: 0
+    display: flex
+    flex-flow: row wrap
+
+.display_container
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100vw
+    width: calc(var(--vw, 1vw) * 100)
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+
+    z-index: 1
+
+    background: rgba(255, 255, 255, .0)
+    backdrop-filter: blur(0px)
+    transition: background .2s
+    &.active
+        background: rgba(255, 255, 255, .7)
+        backdrop-filter: blur(3px)
+
+    .display_container2
+        position: relative
+        margin: auto
+        margin-top: 5vh
+        margin-top: calc(var(--vh, 1vh) * 5)
+        width: 90vw
+        width: calc(var(--vw, 1vw) * 90)
+        height: 90vh
+        height: calc(var(--vh, 1vh) * 90)
+
+        transition: top .35s, bottom .35s, left .35s, transform .35s
+        left: 0
+        top: -100vh
+        top: calc(var(--vh, 1vh) * -100)
+        bottom: 100vh
+        bottom: calc(var(--vh, 1vh) * 100)
+        &.active
+            top: 0
+            bottom: 0
+        &.zoomed
+            // transition: left .05s, top .05s
+            transition: none
+            transform: scale(2)
+
+    .display_image
+        object-position: center
+        object-fit: contain
+        cursor: zoom-in
+
+    .drag_device
+        cursor: zoom-in
+        position: fixed
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        width: 100vw
+        height: 100vh
+        width: calc(var(--vw, 1vw) * 100)
+        height: calc(var(--vh, 1vh) * 100)
+        z-index: 2
+
+    .close_button
+        z-index: 2
+        font-size: 3vh
+        font-size: calc(var(--vh, 1vh) * 3)
+        position: fixed
+        top: .75em
+        right: .75em
+        cursor: pointer
+    .display_loading
+        position: fixed
+        left: 0
+        right: 0
+        top: 45vh
+        top: calc(var(--vh, 1vh) * 45)
+        height: 100vh
+        height: calc(var(--vh, 1vh) * 100)
+        text-align: center
+        vertical-align: middle
+        & > .loading_container > *
+            @keyframes rotation 
+                from 
+                    transform: rotate(0deg)
+                to 
+                    transform: rotate(359deg)
+            animation: rotation .777s
+            animation-timing-function: linear
+            animation-iteration-count: infinite
+        
+
+.image_container
+    position: relative
+    flex-grow: 1
+
+    margin-right: 2rem
+    margin-bottom: 2rem
+
+    background: $primary
+    box-shadow: $shadow1
+    transition: box-shadow .35s
+    border-radius: .2rem
+    overflow: hidden
+
+    &:hover
+        box-shadow: $shadow1-bold
+    &:hover .next_img
+        transform: scale(1.08)
+
+.image_container:last-child
+    flex-grow: 10
+    background: none
+    box-shadow: none
+
+.next_img
+    max-height: 100%
+    min-width: 100%
+
+    object-fit: cover
+    vertical-align: bottom
+
+    transition: transform .45s
+    cursor: pointer

@@ -1,0 +1,17 @@
+User-agent: *
+Sitemap: https://www.vitraux-artistiques-izabela.fr/sitemap.xml
+Allow: /*
+Disallow: /api/*
+
+User-agent: Googlebot-Image
+Disallow: /*.jpg
+Disallow: /*.jpeg
+Disallow: /*.png
+Allow: /img/*.jpg
+Allow: /img/*.jpeg
+Allow: /img/*.png
+Allow: /img/*.ttf
+Allow: /img/*.ico
+Allow: /img/*.svg
+Allow: /img/*.webp
+Allow: /img/*.pdf
